@@ -1,29 +1,38 @@
 <!DOCTYPE html>
+
 <head>
-	
+    <link rel="stylesheet prefetch" href="http://fonts.googleapis.com/css?family=Roboto:400,100,400italic,700italic,700">
+    <link rel="stylesheet prefetch" href="http://daneden.github.io/animate.css/animate.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Chelsea+Market" rel="stylesheet" type="text/css">
+    <link rel="stylesheet prefetch" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'>
 </head>
+
 <body>
-
-
-
-
-<input type="file" id="files" name="files[]" multiple />
-<output id="list"></output>
-
+    <div class="container">
+        <h1>HTML Metadata Viewer</h1>
+        <hr class="hh1">
+        <div class="box">
+            <h2>Choose a file</h2>
+            <br>
+            <form>
+                <input type="file" id="data" name="files[]" multiple></input>
+            </form>
+            <br>
+            <br>
+            <br>
+            <br>
+            <hr class="hh2">
+            <h3>Output</h3>
+            <output id="output"></output>
+        </div>
+        <footer>
+            <h4>Made with &nbsp;<i class="fa fa-heart"></i>&nbsp;for Fossasia.org</footer>
+        </div>
 <script>
-
-// Check for the various File API support.
-if (window.File && window.FileReader && window.FileList && window.Blob) {
-  // Great success! All the File APIs are supported.
-} else {
-  alert('The File APIs are not fully supported in this browser.');
-}
-
-
-  function handleFileSelect(evt) {
-    var files = evt.target.files; // FileList object
-
-    // files is a FileList of File objects. List some properties.
+    function handleFileSelect(evt) {
+    var files = evt.target.files; 
     var output = [];
     for (var i = 0, f; f = files[i]; i++) {
       output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ',
@@ -31,13 +40,12 @@ if (window.File && window.FileReader && window.FileList && window.Blob) {
                   f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a',
                   '</li>');
     }
-    document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
+    document.getElementById('output').innerHTML = '<ul>' + output.join('') + '</ul>';
   }
 
-  document.getElementById('files').addEventListener('change', handleFileSelect, false);
+  document.getElementById('data').addEventListener('change', handleFileSelect, false);
 </script>
 
-
-
 </body>
+
 </html>
