@@ -11,6 +11,7 @@
 
 <body>
     <div class="container">
+    <a class="linki" href="index.html"> <i class="fa fa-repeat active fa-2x "></i></a>
         <h1>HTML Metadata Viewer</h1>
         <hr class="hh1">
         <div class="box">
@@ -21,8 +22,6 @@
             </form>
             <br>
             <br>
-            <br>
-            <br>
             <hr class="hh2">
             <h3>Output</h3>
             <output id="output"></output>
@@ -31,19 +30,18 @@
             <h4>Made with &nbsp;<i class="fa fa-heart"></i>&nbsp;for Fossasia.org</footer>
         </div>
 <script>
-    function handleFileSelect(evt) {
+  function handleFileSelect(evt) {
     var files = evt.target.files; 
     var output = [];
     for (var i = 0, f; f = files[i]; i++) {
-      output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ',
-                  f.size, ' bytes, last modified: ',
-                  f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a',
-                  '</li>');
-    }
-    document.getElementById('output').innerHTML = '<ul>' + output.join('') + '</ul>';
+        output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ',
+            f.size, ' bytes, last modified: ',
+            f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a',
+            '</li>');
   }
-
-  document.getElementById('data').addEventListener('change', handleFileSelect, false);
+    document.getElementById('output').innerHTML += '<ul>' + output.join('') + '</ul>';
+}
+document.getElementById('data').addEventListener('change', handleFileSelect, false);
 </script>
 
 </body>

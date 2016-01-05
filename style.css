@@ -29,6 +29,7 @@ h1 {
     margin-top: 3%;
     padding-top: 20px;
     color: #1D806C;
+    padding-left: 40px;
 }
 
 .hh1 {
@@ -94,9 +95,15 @@ strong {
 i{
 	transition:.2s all ease-in-out;
 	color: #2980b9;
+
 }
 
 i:hover{
 	transition:.2s all ease-in-out;
 	color: #1D806C;
+}
+.linki{
+float: right;
+margin-top: 25px;
+margin-right: 25px;
 }
