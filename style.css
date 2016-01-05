@@ -92,18 +92,30 @@ h4 {
 strong {
     color: #2C695C;
 }
-i{
-	transition:.2s all ease-in-out;
-	color: #2980b9;
 
+i {
+    transition: .2s all ease-in-out;
+    color: #2980b9;
 }
 
-i:hover{
-	transition:.2s all ease-in-out;
-	color: #1D806C;
+i:hover {
+    transition: .2s all ease-in-out;
+    color: #1D806C;
 }
-.linki{
-float: right;
-margin-top: 25px;
-margin-right: 25px;
+
+.linki {
+    float: right;
+    margin-top: 25px;
+    margin-right: 25px;
+}
+
+.link {
+    color: #1D806C;
+    text-decoration: none;
+    transition: .2s all ease-in-out;
+}
+
+.link:hover {
+    color: #2980b9;
+    transition: .2s all ease-in-out;
 }
